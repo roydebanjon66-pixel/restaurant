@@ -1,0 +1,1610 @@
+/* ==========================================================
+   FLAME & SKEWER — DHAKA KEBAB RESTAURANT
+   Complete CSS Design System
+   
+   HOW TO USE THIS FILE:
+   - Colors: Change CSS variables in :root section below
+   - Fonts: Change --ff-heading and --ff-body variables
+   - Spacing: Change --section-py for section padding
+   
+   TABLE OF CONTENTS:
+   1. Design Tokens (Colors, Fonts, etc.)
+   2. Reset & Base Styles
+   3. Buttons
+   4. Navbar
+   5. Hero Section (Video Background)
+   6. Page Hero (Inner Pages)
+   7. Section Common Styles
+   8. Kebab Cards Grid
+   9. Why Choose Us Strip
+   10. Gallery Grid
+   11. Menu Section
+   12. Reviews Section
+   13. Stats Bar
+   14. CTA Section
+   15. Footer
+   16. Animations
+   17. Responsive Design (Mobile)
+   ========================================================== */
+
+
+/* ==========================================================
+   1. DESIGN TOKENS — CHANGE COLORS & FONTS HERE
+   ========================================================== */
+:root {
+    /* ─── BACKGROUND COLORS ─── */
+    /* Main site background — deep charcoal grill color */
+    --bg-dark:       #0c0907;
+    /* Card backgrounds */
+    --bg-card:       #171110;
+    /* Slightly lighter surface for alternating sections */
+    --bg-surface:    #1e1613;
+    /* Elevated surface for hover states */
+    --bg-elevated:   #2a1f1a;
+
+    /* ─── ACCENT COLORS ─── */
+    /* Primary fire orange — used for buttons, links, highlights */
+    --fire:          #ff5722;
+    /* Darker fire for hover states */
+    --fire-deep:     #e64a19;
+    /* Fire glow for box-shadows */
+    --fire-glow:     rgba(255, 87, 34, 0.45);
+    /* Lighter ember color for badges */
+    --ember:         #ff8a65;
+    /* Deep red — used for gradients and badges */
+    --red:           #d32f2f;
+    /* Darkest red — used in button gradients */
+    --red-deep:      #b71c1c;
+    /* Gold — used for prices and star ratings */
+    --gold:          #ffb300;
+    /* Light gold for subtle highlights */
+    --gold-light:    #ffd54f;
+
+    /* ─── TEXT COLORS ─── */
+    /* Pure white — for main headings */
+    --text-white:    #fff;
+    /* Warm white — for body text */
+    --text-light:    #f5ebe6;
+    /* Muted text — for descriptions */
+    --text-muted:    #b89e94;
+    /* Subtle text — for small print */
+    --text-subtle:   #7a6660;
+    /* Border color — very faint lines */
+    --border:        rgba(255, 255, 255, 0.07);
+
+    /* ─── TYPOGRAPHY ─── */
+    /* Heading font — bold, condensed, energetic */
+    --ff-heading:    'Oswald', sans-serif;
+    /* Body font — clean, modern, readable */
+    --ff-body:       'Inter', sans-serif;
+    /* Accent font — elegant italic for special text */
+    --ff-accent:     'Playfair Display', serif;
+
+    /* ─── TRANSITIONS & EFFECTS ─── */
+    --radius-sm:     6px;
+    --radius-md:     12px;
+    --radius-lg:     20px;
+    --radius-full:   100px;
+    --transition:    all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-card:   0 8px 30px rgba(0, 0, 0, 0.55);
+    --shadow-glow:   0 0 25px var(--fire-glow);
+}
+
+
+/* ==========================================================
+   2. RESET & BASE STYLES
+   ========================================================== */
+
+/* Remove default margins and paddings */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* Main body styling */
+body {
+    font-family: var(--ff-body);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Image defaults */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Link defaults */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* List defaults */
+ul {
+    list-style: none;
+}
+
+/* Button defaults */
+button {
+    font-family: inherit;
+}
+
+/* Main container — controls max width of content */
+/* Change max-width to make content wider or narrower */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Heading defaults — all headings use the heading font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.mt-4 { margin-top: 2rem; }
+
+
+/* ==========================================================
+   3. BUTTONS
+   All button styles used across the website.
+   
+   CLASSES:
+   - .btn-fire: Primary orange/red gradient button
+   - .btn-ghost: Transparent with border
+   - .btn-outline-fire: Orange border, transparent fill
+   
+   SIZES:
+   - .btn-sm: Small (cards)
+   - .btn-lg: Large (sections)
+   - .btn-xl: Extra large (CTA)
+   ========================================================== */
+
+/* Base button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--ff-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── Fire Button (Primary CTA) ── */
+/* Orange-to-red gradient with glow effect */
+.btn-fire {
+    background: linear-gradient(135deg, var(--fire) 0%, var(--red-deep) 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+/* Sheen/sweep animation on hover */
+.btn-fire::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.5s;
+}
+
+.btn-fire:hover::before {
+    left: 100%;
+}
+
+.btn-fire:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ── Ghost Button (Secondary) ── */
+/* Transparent with blurred background */
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Outline Fire Button ── */
+/* Orange border, fills with orange on hover */
+.btn-outline-fire {
+    background: transparent;
+    color: var(--fire);
+    border: 2px solid var(--fire);
+}
+
+.btn-outline-fire:hover {
+    background: var(--fire);
+    color: #fff;
+    box-shadow: var(--shadow-glow);
+}
+
+/* ── Button Sizes ── */
+.btn-sm { padding: 0.55rem 1.2rem; font-size: 0.85rem; }
+.btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+.btn-xl { padding: 1.3rem 3.5rem; font-size: 1.25rem; }
+
+
+/* ==========================================================
+   4. NAVBAR
+   Fixed navigation bar at the top of every page.
+   
+   TO CUSTOMIZE:
+   - Background on scroll: change .navbar.scrolled background
+   - Logo size: change .logo-text font-size
+   - Link spacing: change .nav-links gap
+   ========================================================== */
+
+/* Navbar wrapper — fixed at top, transparent initially */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+/* Navbar after scrolling — becomes solid dark */
+.navbar.scrolled {
+    background: rgba(12, 9, 7, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    padding: 0.7rem 0;
+}
+
+/* Navbar inner container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ── Logo ── */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Logo icon box — fire icon with gradient background */
+.logo-icon {
+    background: linear-gradient(135deg, var(--fire), var(--red-deep));
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+/* Logo text — restaurant name */
+.logo-text {
+    font-family: var(--ff-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The "&" symbol in logo — colored orange */
+.logo-text span {
+    color: var(--fire);
+    font-family: var(--ff-accent);
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* ── Navigation Links ── */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Individual nav link */
+.nav-link {
+    font-family: var(--ff-heading);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    transition: var(--transition);
+    position: relative;
+}
+
+/* Underline animation on hover */
+.nav-link:not(.btn-nav-order)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--fire);
+    transition: var(--transition);
+}
+
+.nav-link:not(.btn-nav-order):hover::after,
+.nav-link.active:not(.btn-nav-order)::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+/* Active page link — shows underline */
+.nav-link.active {
+    color: var(--gold);
+}
+
+/* Order Now button in navbar */
+.btn-nav-order {
+    background: linear-gradient(135deg, var(--fire), var(--red-deep));
+    color: #fff !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.btn-nav-order:hover {
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
+}
+
+/* ── Hamburger Menu Button (Mobile only) ── */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+    z-index: 1001;
+}
+
+/* Hamburger lines */
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--text-white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* Hamburger animation when open — forms X shape */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+
+/* ==========================================================
+   5. HERO SECTION — VIDEO BACKGROUND
+   The main hero on the home page (index.html).
+   Uses kabab.mp4 video as a full-screen background.
+   
+   TO CUSTOMIZE:
+   - Overlay darkness: change .hero-overlay background opacity
+   - Video poster (fallback image): change in HTML poster attribute
+   - Minimum height: change min-height below
+   ========================================================== */
+
+/* Hero wrapper */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-dark);
+    padding-top: 80px;
+}
+
+/* Video wrapper — fills entire hero section */
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* The actual video element */
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes video cover the whole area like a background image */
+}
+
+/* Dark overlay on top of video — makes text readable */
+/* Change the rgba alpha value to make it lighter or darker */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        /* Subtle fire glow in bottom-right corner */
+        radial-gradient(ellipse at 80% 80%, rgba(255, 87, 34, 0.15) 0%, transparent 50%),
+        /* Main dark overlay — change 0.7 to adjust darkness */
+        linear-gradient(180deg, rgba(12,9,7,0.65) 0%, rgba(12,9,7,0.85) 100%);
+    z-index: 1;
+}
+
+/* Hero inner content container */
+.hero-inner {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    min-height: 100vh;
+}
+
+/* Hero text content */
+.hero-content {
+    max-width: 750px;
+}
+
+/* ── Hero Badge ── */
+/* Small tag above the headline — "Famous in Dhaka Since 2005" */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 87, 34, 0.12);
+    border: 1px solid rgba(255, 87, 34, 0.4);
+    color: var(--ember);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    /* Pulsing glow animation */
+    animation: pulseGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* ── Hero Title ── */
+.hero-title {
+    font-family: var(--ff-heading);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* The accent text under the headline — italic golden text */
+.title-accent {
+    display: block;
+    color: var(--gold);
+    font-family: var(--ff-accent);
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 0.6em;
+    margin-top: 0.3rem;
+}
+
+/* ── Hero Subtitle ── */
+.hero-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    color: var(--text-muted);
+    margin-bottom: 2.2rem;
+    line-height: 1.7;
+    max-width: 600px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+/* ── Hero CTA Buttons ── */
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* ── Social Proof Strip ── */
+/* Rating and customer count below buttons */
+.hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Gold star icons */
+.proof-stars i {
+    color: var(--gold);
+    font-size: 1rem;
+}
+
+/* Vertical line divider between proof items */
+.proof-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,0.15);
+}
+
+/* ── Scroll Down Indicator ── */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    color: var(--text-subtle);
+    font-size: 1.5rem;
+    animation: bounceDown 2s ease-in-out infinite;
+}
+
+/* ── Ember Particles Container ── */
+/* Floating fire particles generated by JavaScript */
+.ember-container {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Individual ember particle */
+.ember {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--fire);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px);
+    animation: riseEmber linear forwards;
+}
+
+
+/* ==========================================================
+   6. PAGE HERO — Inner Page Headers
+   Used on signature.html, menu.html, reviews.html
+   
+   TO CUSTOMIZE:
+   - Background image: change URL below
+   - Height: change min-height
+   - Overlay darkness: change rgba alpha values
+   ========================================================== */
+
+.page-hero {
+    position: relative;
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Background image for inner page heroes — change this URL */
+    background: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+/* Dark overlay */
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12,9,7,0.75) 0%, rgba(12,9,7,0.9) 100%);
+}
+
+/* Page hero content */
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 1.5rem;
+}
+
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.page-hero-content p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   7. SECTION COMMON STYLES
+   Shared styles for all content sections.
+   ========================================================== */
+
+/* Standard section padding */
+.section {
+    padding: 6rem 0;
+}
+
+/* Dark background variant for alternating sections */
+.section-dark {
+    background: var(--bg-surface);
+}
+
+/* Section header area above content */
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+/* Small colored tag above section title */
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 87, 34, 0.1);
+    color: var(--fire);
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+}
+
+/* Section title */
+.section-title {
+    font-family: var(--ff-heading);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+/* Section description text */
+.section-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Subtitle text helper */
+.subtext {
+    font-family: var(--ff-heading);
+    color: var(--fire);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==========================================================
+   8. KEBAB CARDS GRID
+   Used on index.html (3 cards) and signature.html (8 cards).
+   
+   TO CUSTOMIZE:
+   - Cards per row: change grid-template-columns min value
+   - Card border radius: change var(--radius-md)
+   - Image height: change .kc-img-wrap height
+   ========================================================== */
+
+/* Grid container */
+.kebab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual kebab card */
+.kebab-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card hover effect — lifts up with shadow */
+.kebab-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card);
+    border-color: rgba(255, 87, 34, 0.25);
+}
+
+/* Card image wrapper */
+.kc-img-wrap {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+}
+
+/* Card image — zooms on hover */
+.kc-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s;
+}
+
+/* Image zoom on card hover */
+.kebab-card:hover .kc-img-wrap img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Badge on card (e.g., "Best Seller", "Chef's Pick") */
+.kc-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--red);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: var(--radius-sm);
+    z-index: 3;
+}
+
+/* Hover overlay with Quick Order button */
+.kc-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 9, 7, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show overlay on hover */
+.kebab-card:hover .kc-overlay {
+    opacity: 1;
+}
+
+/* Card body — text content */
+.kc-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Kebab name */
+.kc-body h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Kebab description */
+.kc-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    flex: 1;
+}
+
+/* Card footer — price and add button */
+.kc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Price in gold */
+.kc-price {
+    font-family: var(--ff-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+
+/* ==========================================================
+   9. WHY CHOOSE US STRIP
+   Horizontal feature bar with 4 trust points.
+   ========================================================== */
+
+.why-strip {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 0;
+}
+
+/* 4-column grid for features */
+.why-strip-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Feature icon */
+.ws-item i {
+    font-size: 2.5rem;
+    color: var(--fire);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Feature title */
+.ws-item h4 {
+    font-family: var(--ff-heading);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+/* Feature description */
+.ws-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================================
+   10. GALLERY GRID
+   Masonry-style food photo gallery on home page.
+   
+   TO CUSTOMIZE:
+   - Grid size: change grid-template-columns and rows
+   - Image height: change min-height
+   ========================================================== */
+
+/* Gallery section background */
+.gallery-section {
+    background: var(--bg-surface);
+}
+
+/* Gallery grid layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1rem;
+}
+
+/* Individual gallery item */
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Gallery image — covers full cell */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s;
+}
+
+/* Image zoom on hover */
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.15);
+}
+
+/* Tall gallery items span 2 rows */
+.gi-tall {
+    grid-row: span 2;
+}
+
+/* Wide gallery items span 2 columns */
+.gi-wide {
+    grid-column: span 2;
+}
+
+/* Overlay with label on hover */
+.gi-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(12,9,7,0.8) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gi-overlay {
+    opacity: 1;
+}
+
+.gi-overlay span {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--text-white);
+}
+
+
+/* ==========================================================
+   11. MENU SECTION
+   Full menu with category filter tabs.
+   ========================================================== */
+
+/* Tab buttons row */
+.menu-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+/* Individual tab button */
+.mtab {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border: 1px solid var(--border);
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Active/hover tab — fills with fire color */
+.mtab:hover, .mtab.active {
+    background: var(--fire);
+    border-color: var(--fire);
+    color: #fff;
+}
+
+/* Menu items list */
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 1rem;
+}
+
+/* Individual menu row */
+.menu-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+/* Menu row hover — slides right slightly */
+.menu-row:hover {
+    border-color: rgba(255, 87, 34, 0.3);
+    background: var(--bg-elevated);
+    transform: translateX(6px);
+}
+
+/* Menu item image */
+.menu-row img {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Menu item info */
+.mr-info {
+    flex: 1;
+}
+
+/* Menu item name */
+.mr-info h4 {
+    font-family: var(--ff-heading);
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+/* Menu item description */
+.mr-info p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+/* Menu item price — gold color */
+.mr-price {
+    font-family: var(--ff-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   12. REVIEWS SECTION
+   ========================================================== */
+
+/* Reviews grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* 2-column variant for home page preview */
+.reviews-grid-2col {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+/* Individual review card */
+.review-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Large decorative quote mark */
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 7rem;
+    font-family: serif;
+    color: rgba(255, 87, 34, 0.06);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Card hover effect */
+.review-card:hover {
+    border-color: rgba(255, 87, 34, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Star rating icons */
+.rc-stars {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Review text */
+.rc-text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Reviewer info */
+.rc-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+
+/* Reviewer avatar circle */
+.rc-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--fire), var(--red-deep));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Reviewer name */
+.rc-author h5 {
+    font-family: var(--ff-heading);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+/* Reviewer title/role */
+.rc-author span {
+    font-size: 0.82rem;
+    color: var(--text-subtle);
+}
+
+
+/* ==========================================================
+   13. STATS BAR
+   Used on reviews.html to show key numbers.
+   ========================================================== */
+
+.stats-bar {
+    background: var(--bg-card);
+    border-top: 3px solid var(--fire);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 0;
+}
+
+/* 4-column layout */
+.stats-bar-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Large stat number */
+.stat-number {
+    font-family: var(--ff-heading);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+/* Stat label text */
+.stat-label {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+
+/* ==========================================================
+   14. CTA SECTION
+   Bold ordering call-to-action.
+   ========================================================== */
+
+.section-cta {
+    position: relative;
+    padding: 8rem 0;
+    text-align: center;
+    overflow: hidden;
+    /* Background image — change this URL */
+    background: url('https://images.unsplash.com/photo-1544026244-11adac0b4bd2?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+}
+
+/* Dark overlay */
+.cta-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12,9,7,0.8) 0%, rgba(12,9,7,0.92) 100%);
+}
+
+/* CTA content */
+.cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+/* CTA headline — golden text */
+.cta-title {
+    font-family: var(--ff-heading);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+/* CTA description */
+.cta-desc {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+/* CTA button — has continuous pulsing glow animation */
+.cta-glow-btn {
+    animation: ctaPulse 2.5s ease-in-out infinite alternate;
+}
+
+/* Small text under CTA button */
+.cta-micro {
+    margin-top: 1.5rem;
+    color: var(--text-subtle);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================================
+   15. FOOTER
+   ========================================================== */
+
+/* Footer wrapper */
+.footer {
+    background: #080604;
+    padding-top: 5rem;
+    border-top: 3px solid var(--fire);
+}
+
+/* Footer grid — 4 columns */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Footer brand description */
+.footer-brand p {
+    color: var(--text-muted);
+    margin-top: 1.2rem;
+    max-width: 320px;
+    font-size: 0.95rem;
+}
+
+/* Social media icons */
+.footer-socials {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+/* Social icon circle */
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    background: var(--fire);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Footer column headings */
+.footer-col h4 {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Footer links */
+.footer-col a {
+    display: block;
+    color: var(--text-muted);
+    margin-bottom: 0.7rem;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.footer-col a:hover {
+    color: var(--fire);
+    padding-left: 5px;
+}
+
+/* Footer contact info */
+.footer-col p {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.footer-col p i {
+    color: var(--fire);
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-subtle);
+    font-size: 0.85rem;
+}
+
+
+/* ==========================================================
+   16. ANIMATIONS
+   All keyframe animations used across the site.
+   ========================================================== */
+
+/* Badge glow pulse */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(255,87,34,0.1); }
+    100% { box-shadow: 0 0 20px rgba(255,87,34,0.3); }
+}
+
+/* Scroll indicator bounce */
+@keyframes bounceDown {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.4; }
+    50% { transform: translateX(-50%) translateY(10px); opacity: 1; }
+}
+
+/* Ember particle rising animation */
+@keyframes riseEmber {
+    0% { opacity: 0; transform: translateY(0) scale(1); }
+    20% { opacity: 0.8; }
+    100% { opacity: 0; transform: translateY(-100vh) scale(0.3); }
+}
+
+/* CTA button glow pulse */
+@keyframes ctaPulse {
+    0% { box-shadow: 0 0 15px rgba(255,87,34,0.3); }
+    100% { box-shadow: 0 0 40px rgba(255,87,34,0.7), 0 0 80px rgba(255,87,34,0.2); }
+}
+
+/* Scroll-reveal: elements start hidden and slide up */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+                transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Element becomes visible when it enters viewport */
+[data-aos].revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   17. RESPONSIVE DESIGN — MOBILE OPTIMIZATION
+   Breakpoints:
+   - 1024px: Tablets & small desktops
+   - 768px: Phones (landscape) & small tablets
+   - 480px: Small phones
+   ========================================================== */
+
+/* ── Tablets & Small Desktops ── */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ── Phones ── */
+@media (max-width: 768px) {
+    /* Hide desktop nav links, show hamburger */
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Full-screen mobile menu */
+    .nav-links.mobile-open {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(12, 9, 7, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 999;
+        animation: fadeInMenu 0.3s ease;
+    }
+
+    .nav-links.mobile-open .nav-link {
+        font-size: 1.5rem;
+    }
+
+    @keyframes fadeInMenu {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Reduce section padding on mobile */
+    .section {
+        padding: 4rem 0;
+    }
+
+    .hero-inner {
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    /* Stack kebab cards in single column */
+    .kebab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 2 columns for features strip */
+    .why-strip-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Single column for menu items */
+    .menu-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack menu rows vertically on mobile */
+    .menu-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-row img {
+        width: 100%;
+        height: 180px;
+        border-radius: var(--radius-md);
+    }
+
+    .mr-info h4 { margin-top: 0.5rem; }
+    .mr-price { margin-top: 0.8rem; }
+
+    /* Stack menu tabs vertically */
+    .menu-tabs {
+        flex-direction: column;
+    }
+
+    .mtab {
+        width: 100%;
+    }
+
+    /* Full-width buttons on mobile for easy tapping */
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    /* Gallery becomes 2 columns on mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+
+    .gi-tall { grid-row: span 1; }
+    .gi-wide { grid-column: span 1; }
+
+    /* Stack footer in single column */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand p { margin: 1rem auto; }
+    .footer-socials { justify-content: center; }
+    .footer-col p { justify-content: center; }
+    .footer-col a:hover { padding-left: 0; }
+
+    /* Stats bar in 2 columns */
+    .stats-bar-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* 2-column reviews become single column */
+    .reviews-grid-2col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Small Phones ── */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .why-strip-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+
+    .stats-bar-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PAGE TITLE -->
+    <title>Signature Kebabs | Flame & Skewer</title>
+    <meta name="description" content="Explore our legendary signature kebabs — Seekh, Tikka, Boti, Reshmi, Malai, and Shish. Grilled to perfection in Dhaka.">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================================================================
+         NAVIGATION BAR (Same on every page)
+         - Change "active" class to the current page link
+    ================================================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" id="logo">
+                <div class="logo-icon"><i class="ph-fill ph-fire"></i></div>
+                <div class="logo-text">Flame<span>&</span>Skewer</div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <!-- Active page is Signature -->
+                <li><a href="signature.html" class="nav-link active">Signature</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="index.html#order" class="nav-link btn-nav-order"><i class="ph-fill ph-fire"></i> Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================================================================
+         PAGE HERO BANNER
+         - Smaller hero for inner pages
+         
+         TO CHANGE:
+         - Background image: change in style.css (.page-hero background)
+         - Page title: edit h1 text
+         - Subtitle: edit p text
+    ================================================================= -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <span class="section-tag"><i class="ph-fill ph-fire"></i> Our Specialties</span>
+            <h1>Signature Sizzling Kebabs</h1>
+            <p>The legendary, mouth-watering kebabs that made us famous across Dhaka. Every skewer is grilled to absolute perfection.</p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         ALL SIGNATURE KEBABS
+         - Full grid of 8 premium kebab cards
+         
+         TO CHANGE PER CARD:
+         - img src: replace with your actual food photo
+         - img alt: describe the image for accessibility
+         - .kc-badge: change or remove the badge text
+         - h3: kebab name
+         - p: kebab description
+         - .kc-price: price in Taka (৳)
+    ================================================================= -->
+    <section class="section">
+        <div class="container">
+
+            <div class="kebab-grid">
+
+                <!-- ========== KEBAB 1: Beef Seekh Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <!-- Image — Replace src with your own photo -->
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" alt="Beef Seekh Kebab" loading="lazy">
+                        <!-- Badge — Change text or remove this div -->
+                        <div class="kc-badge">🔥 Best Seller</div>
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <!-- Kebab Name -->
+                        <h3>Beef Seekh Kebab</h3>
+                        <!-- Description -->
+                        <p>Spiced minced beef wrapped around a skewer and grilled to juicy perfection over glowing charcoal embers. Our #1 best seller.</p>
+                        <div class="kc-footer">
+                            <!-- Price -->
+                            <span class="kc-price">৳ 350</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 2: Chicken Tikka Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1599487405270-8e12eb0aca38?auto=format&fit=crop&w=600&q=80" alt="Chicken Tikka Kebab" loading="lazy">
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Chicken Tikka Kebab</h3>
+                        <p>Tender boneless chicken chunks marinated overnight in rich tandoori spices and thick yogurt, then charred on open flames.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 300</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 3: Chicken Reshmi Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://plus.unsplash.com/premium_photo-1661600135899-7323ffba3bf9?auto=format&fit=crop&w=600&q=80" alt="Reshmi Kebab" loading="lazy">
+                        <div class="kc-badge">✨ Chef's Pick</div>
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Chicken Reshmi Kebab</h3>
+                        <p>Buttery soft minced chicken with cream, cashew paste, and mild spices. Silky smooth and melt-in-mouth goodness.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 320</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 4: Mutton Boti Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=600&q=80" alt="Mutton Boti Kebab" loading="lazy">
+                        <div class="kc-badge">🥩 Premium Cut</div>
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Mutton Boti Kebab</h3>
+                        <p>Succulent bone-in mutton cubes slow-marinated in signature street spice blend and grilled over wood fire until smoky.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 450</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 5: Chicken Malai Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://plus.unsplash.com/premium_photo-1694141253763-209b4c8f8ace?auto=format&fit=crop&w=600&q=80" alt="Malai Kebab" loading="lazy">
+                        <div class="kc-badge">🧀 Creamy</div>
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Chicken Malai Kebab</h3>
+                        <p>Ultra-creamy chicken kebab loaded with cheese, fresh cream, and green chilies. Dangerously addictive and irresistible.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 340</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 6: Classic Shish Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544026244-11adac0b4bd2?auto=format&fit=crop&w=600&q=80" alt="Shish Kebab" loading="lazy">
+                        <div class="kc-badge">🌶 Spicy</div>
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Classic Shish Kebab</h3>
+                        <p>Marinated cubed meat and grilled bell peppers, onion, and tomato threaded onto a skewer. Bold and smoky.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 380</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 7: Jumbo Afghani Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1614398751058-eb2e0bf63e53?auto=format&fit=crop&w=600&q=80" alt="Afghani Kebab" loading="lazy">
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Jumbo Afghani Kebab</h3>
+                        <p>Juicy chicken drumsticks marinated in rich cashew-yogurt paste, grilled in a blazing tandoor oven. Extra juicy.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 380</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== KEBAB 8: Peshawari Chapli Kebab ========== -->
+                <article class="kebab-card" data-aos>
+                    <div class="kc-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544025162-8a66ce6b0a54?auto=format&fit=crop&w=600&q=80" alt="Chapli Kebab" loading="lazy">
+                        <div class="kc-badge">🔥 Street Famous</div>
+                        <div class="kc-overlay">
+                            <button class="btn btn-fire btn-sm">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="kc-body">
+                        <h3>Peshawari Chapli Kebab</h3>
+                        <p>Dense, pan-seared minced beef patty loaded with pomegranate seeds, cumin, and coriander. Authentic Peshawari taste.</p>
+                        <div class="kc-footer">
+                            <span class="kc-price">৳ 280</span>
+                            <button class="btn btn-outline-fire btn-sm"><i class="ph ph-shopping-cart"></i> Add</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         CTA SECTION (Same on every page)
+    ================================================================= -->
+    <section class="section-cta" id="order">
+        <div class="cta-bg-overlay"></div>
+        <div class="container cta-inner">
+            <h2 class="cta-title">Ready for Real Kebab?</h2>
+            <p class="cta-desc">Order now and enjoy the taste everyone in Dhaka loves.</p>
+            <a href="#" class="btn btn-fire btn-xl cta-glow-btn">
+                <i class="ph-fill ph-fire"></i> Order Your Kebab Now
+            </a>
+            <p class="cta-micro">Available on FoodPanda · Pathao Food · Direct Call</p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FOOTER (Same on every page)
+    ================================================================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="ph-fill ph-fire"></i></div>
+                    <div class="logo-text">Flame<span>&</span>Skewer</div>
+                </a>
+                <p>Serving the boldest, smokiest, and most flavorful kebabs in the heart of Dhaka since 2005.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-youtube-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <a href="index.html">Home</a>
+                <a href="signature.html">Our Kebabs</a>
+                <a href="menu.html">Full Menu</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="ph-fill ph-map-pin"></i> 45 Baily Road, Dhaka 1000</p>
+                <p><i class="ph-fill ph-phone"></i> +88 01711-000000</p>
+                <p><i class="ph-fill ph-envelope-simple"></i> order@flameandskewer.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p><strong>Mon - Fri</strong></p>
+                <p>12:00 PM - 12:00 AM</p>
+                <p><strong>Sat - Sun</strong></p>
+                <p>11:00 AM - 1:00 AM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Flame & Skewer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

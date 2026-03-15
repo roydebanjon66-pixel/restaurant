@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PAGE TITLE -->
+    <title>Full Menu | Flame & Skewer</title>
+    <meta name="description" content="Explore our full menu — Signature Kebabs, BBQ Platters, Biryani, Naan, Drinks, and Desserts. Flame & Skewer, Dhaka.">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================================================================
+         NAVIGATION BAR (Same on every page)
+    ================================================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" id="logo">
+                <div class="logo-icon"><i class="ph-fill ph-fire"></i></div>
+                <div class="logo-text">Flame<span>&</span>Skewer</div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="signature.html" class="nav-link">Signature</a></li>
+                <!-- Active page is Menu -->
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="index.html#order" class="nav-link btn-nav-order"><i class="ph-fill ph-fire"></i> Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================================================================
+         PAGE HERO BANNER
+    ================================================================= -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <span class="section-tag"><i class="ph ph-book-open-text"></i> Full Menu</span>
+            <h1>Explore All Flavors</h1>
+            <p>From sizzling kebabs to rich biryanis and buttery naans — there's something for every craving.</p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FULL MENU WITH CATEGORY TABS
+         
+         HOW TO ADD A NEW CATEGORY:
+         1. Add a new <button class="mtab" data-cat="newcategory"> in .menu-tabs
+         2. Add menu items with data-category="newcategory"
+         
+         HOW TO ADD A NEW MENU ITEM:
+         Copy one .menu-row div and change:
+         - data-category to match the tab
+         - img src to your food photo
+         - h4 to the item name
+         - p to the description
+         - .mr-price to the price
+    ================================================================= -->
+    <section class="section section-dark">
+        <div class="container">
+
+            <!-- Category Filter Tabs -->
+            <div class="menu-tabs" id="menu-tabs">
+                <!-- Tab: All items -->
+                <button class="mtab active" data-cat="all">All</button>
+                <!-- Tab: Signature Kebabs -->
+                <button class="mtab" data-cat="kebabs">Signature Kebabs</button>
+                <!-- Tab: BBQ Platters -->
+                <button class="mtab" data-cat="platters">BBQ Platters</button>
+                <!-- Tab: Biryani -->
+                <button class="mtab" data-cat="biryani">Biryani</button>
+                <!-- Tab: Naan & Paratha -->
+                <button class="mtab" data-cat="breads">Naan & Paratha</button>
+                <!-- Tab: Drinks & Desserts -->
+                <button class="mtab" data-cat="extras">Drinks & Desserts</button>
+            </div>
+
+            <!-- Menu Items List -->
+            <div class="menu-list" id="menu-list">
+
+                <!-- ===========================
+                     CATEGORY: SIGNATURE KEBABS
+                     =========================== -->
+                
+                <!-- Kebab Item 1 — Change image, name, description, price -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" alt="Beef Seekh Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Beef Seekh Kebab</h4>
+                        <p>Spiced minced beef grilled on charcoal skewers. Juicy and smoky.</p>
+                    </div>
+                    <span class="mr-price">৳ 350</span>
+                </div>
+                
+                <!-- Kebab Item 2 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://images.unsplash.com/photo-1599487405270-8e12eb0aca38?auto=format&fit=crop&w=200&q=80" alt="Chicken Tikka" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Chicken Tikka Kebab</h4>
+                        <p>Boneless chicken in tandoori yogurt marinade, charred on open flames.</p>
+                    </div>
+                    <span class="mr-price">৳ 300</span>
+                </div>
+                
+                <!-- Kebab Item 3 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://plus.unsplash.com/premium_photo-1661600135899-7323ffba3bf9?auto=format&fit=crop&w=200&q=80" alt="Reshmi Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Chicken Reshmi Kebab</h4>
+                        <p>Silky smooth minced chicken with cream and cashew paste.</p>
+                    </div>
+                    <span class="mr-price">৳ 320</span>
+                </div>
+                
+                <!-- Kebab Item 4 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=200&q=80" alt="Boti Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Mutton Boti Kebab</h4>
+                        <p>Succulent mutton cubes with aromatic street spices, wood-fired.</p>
+                    </div>
+                    <span class="mr-price">৳ 450</span>
+                </div>
+
+                <!-- Kebab Item 5 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://plus.unsplash.com/premium_photo-1694141253763-209b4c8f8ace?auto=format&fit=crop&w=200&q=80" alt="Malai Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Chicken Malai Kebab</h4>
+                        <p>Creamy, cheesy chicken kebab with green chilies. Addictive.</p>
+                    </div>
+                    <span class="mr-price">৳ 340</span>
+                </div>
+
+                <!-- Kebab Item 6 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://images.unsplash.com/photo-1544026244-11adac0b4bd2?auto=format&fit=crop&w=200&q=80" alt="Shish Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Classic Shish Kebab</h4>
+                        <p>Skewered meat with grilled peppers, onion, and tomato.</p>
+                    </div>
+                    <span class="mr-price">৳ 380</span>
+                </div>
+
+                <!-- Kebab Item 7 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://images.unsplash.com/photo-1614398751058-eb2e0bf63e53?auto=format&fit=crop&w=200&q=80" alt="Afghani Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Jumbo Afghani Kebab</h4>
+                        <p>Juicy drumstick in cashew-yogurt paste, tandoor grilled.</p>
+                    </div>
+                    <span class="mr-price">৳ 380</span>
+                </div>
+
+                <!-- Kebab Item 8 -->
+                <div class="menu-row" data-category="kebabs">
+                    <img src="https://images.unsplash.com/photo-1544025162-8a66ce6b0a54?auto=format&fit=crop&w=200&q=80" alt="Chapli Kebab" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Peshawari Chapli Kebab</h4>
+                        <p>Pan-seared beef patty with pomegranate and cumin.</p>
+                    </div>
+                    <span class="mr-price">৳ 280</span>
+                </div>
+
+                <!-- ===========================
+                     CATEGORY: BBQ PLATTERS
+                     =========================== -->
+                
+                <!-- Platter 1 -->
+                <div class="menu-row" data-category="platters">
+                    <img src="https://images.unsplash.com/photo-1658428172935-7d8fd82ebc14?auto=format&fit=crop&w=200&q=80" alt="Mixed Grill Platter" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Mega Mixed Grill Platter</h4>
+                        <p>Seekh, Tikka, Boti, Shish & Reshmi with naan and raita. Serves 3-4.</p>
+                    </div>
+                    <span class="mr-price">৳ 1,200</span>
+                </div>
+
+                <!-- Platter 2 -->
+                <div class="menu-row" data-category="platters">
+                    <img src="https://images.unsplash.com/photo-1544025162-8a66ce6b0a54?auto=format&fit=crop&w=200&q=80" alt="Fire Wings" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Fire Wings Platter</h4>
+                        <p>12 smoky BBQ chicken wings glazed with sweet chili. Served with fries.</p>
+                    </div>
+                    <span class="mr-price">৳ 550</span>
+                </div>
+
+                <!-- Platter 3 -->
+                <div class="menu-row" data-category="platters">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80" alt="Couple Platter" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Couple's BBQ Platter</h4>
+                        <p>4 Seekh, 4 Tikka, 2 Naan, Raita & Salad. Perfect for two.</p>
+                    </div>
+                    <span class="mr-price">৳ 750</span>
+                </div>
+
+                <!-- ===========================
+                     CATEGORY: BIRYANI
+                     =========================== -->
+                
+                <!-- Biryani 1 -->
+                <div class="menu-row" data-category="biryani">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93cb0?auto=format&fit=crop&w=200&q=80" alt="Kacchi Biryani" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Special Mutton Kacchi</h4>
+                        <p>Authentic Dhaka-style Kacchi with tender mutton and aromatic basmati rice.</p>
+                    </div>
+                    <span class="mr-price">৳ 450</span>
+                </div>
+
+                <!-- Biryani 2 -->
+                <div class="menu-row" data-category="biryani">
+                    <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=200&q=80" alt="Chicken Tehari" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Chicken Tehari</h4>
+                        <p>Fragrant basmati rice with spiced chicken, potatoes, and garam masala.</p>
+                    </div>
+                    <span class="mr-price">৳ 320</span>
+                </div>
+
+                <!-- Biryani 3 -->
+                <div class="menu-row" data-category="biryani">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93cb0?auto=format&fit=crop&w=200&q=80" alt="Beef Biryani" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Beef Dum Biryani</h4>
+                        <p>Slow-cooked layered biryani with tender beef, saffron, and fried onions.</p>
+                    </div>
+                    <span class="mr-price">৳ 380</span>
+                </div>
+
+                <!-- ===========================
+                     CATEGORY: NAAN & PARATHA
+                     =========================== -->
+                
+                <!-- Bread 1 -->
+                <div class="menu-row" data-category="breads">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" alt="Garlic Naan" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Butter Garlic Naan</h4>
+                        <p>Fluffy tandoor-baked flatbread with melted butter and roasted garlic.</p>
+                    </div>
+                    <span class="mr-price">৳ 60</span>
+                </div>
+
+                <!-- Bread 2 -->
+                <div class="menu-row" data-category="breads">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=200&q=80" alt="Lachha Paratha" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Crispy Lachha Paratha</h4>
+                        <p>Multi-layered, crispy, flaky flatbread fried in pure deshi ghee.</p>
+                    </div>
+                    <span class="mr-price">৳ 40</span>
+                </div>
+
+                <!-- Bread 3 -->
+                <div class="menu-row" data-category="breads">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" alt="Cheese Naan" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Stuffed Cheese Naan</h4>
+                        <p>Tandoor naan packed with melted mozzarella and cheddar. Stretchy goodness.</p>
+                    </div>
+                    <span class="mr-price">৳ 100</span>
+                </div>
+
+                <!-- Bread 4 -->
+                <div class="menu-row" data-category="breads">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=200&q=80" alt="Plain Roti" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Tandoori Roti</h4>
+                        <p>Classic whole-wheat flatbread baked in tandoor oven. Simple and perfect.</p>
+                    </div>
+                    <span class="mr-price">৳ 25</span>
+                </div>
+
+                <!-- ===========================
+                     CATEGORY: DRINKS & DESSERTS
+                     =========================== -->
+                
+                <!-- Drink 1 -->
+                <div class="menu-row" data-category="extras">
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=200&q=80" alt="Borhani" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Spicy Borhani</h4>
+                        <p>Traditional Dhaka spiced yogurt drink. Perfect pairing for heavy BBQ.</p>
+                    </div>
+                    <span class="mr-price">৳ 90</span>
+                </div>
+
+                <!-- Drink 2 -->
+                <div class="menu-row" data-category="extras">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=200&q=80" alt="Mango Lassi" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Fresh Mango Lassi</h4>
+                        <p>Thick, creamy mango yogurt smoothie. Sweet and refreshing.</p>
+                    </div>
+                    <span class="mr-price">৳ 120</span>
+                </div>
+
+                <!-- Dessert 1 -->
+                <div class="menu-row" data-category="extras">
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=200&q=80" alt="Lava Cake" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Molten Lava Cake</h4>
+                        <p>Warm chocolate cake with gooey flowing center and vanilla ice cream.</p>
+                    </div>
+                    <span class="mr-price">৳ 220</span>
+                </div>
+
+                <!-- Dessert 2 -->
+                <div class="menu-row" data-category="extras">
+                    <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=200&q=80" alt="Firni" loading="lazy">
+                    <div class="mr-info">
+                        <h4>Traditional Firni</h4>
+                        <p>Chilled creamy rice pudding with cardamom, saffron, and pistachio.</p>
+                    </div>
+                    <span class="mr-price">৳ 80</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         CTA SECTION
+    ================================================================= -->
+    <section class="section-cta" id="order">
+        <div class="cta-bg-overlay"></div>
+        <div class="container cta-inner">
+            <h2 class="cta-title">Craving Real Kebab?</h2>
+            <p class="cta-desc">Order now and enjoy the taste everyone in Dhaka loves.</p>
+            <a href="#" class="btn btn-fire btn-xl cta-glow-btn">
+                <i class="ph-fill ph-fire"></i> Order Your Kebab Now
+            </a>
+            <p class="cta-micro">Available on FoodPanda · Pathao Food · Direct Call</p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FOOTER
+    ================================================================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="ph-fill ph-fire"></i></div>
+                    <div class="logo-text">Flame<span>&</span>Skewer</div>
+                </a>
+                <p>Serving the boldest, smokiest, and most flavorful kebabs in the heart of Dhaka since 2005.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-youtube-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <a href="index.html">Home</a>
+                <a href="signature.html">Our Kebabs</a>
+                <a href="menu.html">Full Menu</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="ph-fill ph-map-pin"></i> 45 Baily Road, Dhaka 1000</p>
+                <p><i class="ph-fill ph-phone"></i> +88 01711-000000</p>
+                <p><i class="ph-fill ph-envelope-simple"></i> order@flameandskewer.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p><strong>Mon - Fri</strong></p>
+                <p>12:00 PM - 12:00 AM</p>
+                <p><strong>Sat - Sun</strong></p>
+                <p>11:00 AM - 1:00 AM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Flame & Skewer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

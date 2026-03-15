@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PAGE TITLE -->
+    <title>Customer Reviews | Flame & Skewer</title>
+    <meta name="description" content="See what customers say about Dhaka's most famous kebab restaurant. Real reviews from real food lovers.">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================================================================
+         NAVIGATION BAR (Same on every page)
+    ================================================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" id="logo">
+                <div class="logo-icon"><i class="ph-fill ph-fire"></i></div>
+                <div class="logo-text">Flame<span>&</span>Skewer</div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="signature.html" class="nav-link">Signature</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <!-- Active page is Reviews -->
+                <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+                <li><a href="index.html#order" class="nav-link btn-nav-order"><i class="ph-fill ph-fire"></i> Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================================================================
+         PAGE HERO BANNER
+    ================================================================= -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <span class="section-tag"><i class="ph-fill ph-star"></i> Social Proof</span>
+            <h1>What Foodies Say About Us</h1>
+            <p>Real reviews from happy customers all across Dhaka. We are proud to be a local favorite.</p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         STATS BAR
+         - Shows key numbers to build trust
+         
+         TO CHANGE:
+         - Change the numbers and labels
+    ================================================================= -->
+    <section class="stats-bar">
+        <div class="container stats-bar-inner">
+            <!-- Stat 1 -->
+            <div class="stat-item" data-aos>
+                <span class="stat-number">4.9</span>
+                <span class="stat-label">Average Rating</span>
+            </div>
+            <!-- Stat 2 -->
+            <div class="stat-item" data-aos>
+                <span class="stat-number">3,200+</span>
+                <span class="stat-label">Google Reviews</span>
+            </div>
+            <!-- Stat 3 -->
+            <div class="stat-item" data-aos>
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">Happy Customers</span>
+            </div>
+            <!-- Stat 4 -->
+            <div class="stat-item" data-aos>
+                <span class="stat-number">18+</span>
+                <span class="stat-label">Years Serving</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         ALL CUSTOMER REVIEWS
+         - Grid of review cards
+         
+         TO CHANGE PER REVIEW:
+         - Stars count: add/remove <i class="ph-fill ph-star"> icons
+         - Review text: edit .rc-text paragraph
+         - Avatar initials: edit .rc-avatar text
+         - Reviewer name: edit h5 text
+         - Reviewer title: edit span text
+    ================================================================= -->
+    <section class="section section-dark">
+        <div class="container">
+
+            <div class="reviews-grid">
+
+                <!-- ========== REVIEW 1 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <!-- Review Text — Change this -->
+                    <p class="rc-text">"Best kebab in the area! The Beef Seekh is perfectly spiced — smoky, juicy, and absolutely packed with flavor. We order every single Friday without fail."</p>
+                    <div class="rc-author">
+                        <!-- Avatar Initials — Change to reviewer's initials -->
+                        <div class="rc-avatar">RM</div>
+                        <div>
+                            <!-- Reviewer Name — Change this -->
+                            <h5>Rahim Mollah</h5>
+                            <!-- Reviewer Title — Change this -->
+                            <span>Food Vlogger · Dhaka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 2 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"Perfect smoky flavor every time. I've tried every kebab place in Gulshan — nothing comes close. The Chicken Malai Kebab is dangerously addictive!"</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">SH</div>
+                        <div>
+                            <h5>Sadia Hassan</h5>
+                            <span>Local Guide · Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 3 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"The taste is unforgettable. Brought my family from Chittagong and they were blown away. The Mixed BBQ platter is a complete showstopper."</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">TA</div>
+                        <div>
+                            <h5>Tanvir Ahmed</h5>
+                            <span>Regular Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 4 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"I've been coming here for 10 years and the quality has never dropped. Their Mutton Boti is the best in all of Dhaka. Consistently excellent."</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">FK</div>
+                        <div>
+                            <h5>Farhan Khan</h5>
+                            <span>Loyal Customer · 10 Years</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 5 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"Ordered for my birthday party — 3 Mixed Platters. Everyone was blown away! The food arrived hot, fresh, and perfectly packaged. Amazing service."</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">NA</div>
+                        <div>
+                            <h5>Nadia Akter</h5>
+                            <span>Party Order Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 6 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"As a food blogger I've tried 100+ restaurants in Dhaka. Flame & Skewer is in my top 3. The Reshmi Kebab melts in your mouth — unlike anything else."</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">MR</div>
+                        <div>
+                            <h5>Mahfuz Rahman</h5>
+                            <span>Food Blogger · @dhakafoodies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 7 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"The Afghani Kebab is absolutely massive and the flavor is incredible. Worth every single taka. This place is the real deal — proper charcoal grill!"</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">SI</div>
+                        <div>
+                            <h5>Sakib Islam</h5>
+                            <span>First-Time Visitor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 8 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"Just had the Shish Kebab and Lachha Paratha combo — unbelievable! The smoky flavor, the fresh paratha, the raita... everything was perfect. 10/10."</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">JR</div>
+                        <div>
+                            <h5>Jannatul Rashid</h5>
+                            <span>Weekend Regular</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REVIEW 9 ========== -->
+                <div class="review-card" data-aos>
+                    <div class="rc-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="rc-text">"Delivery was super fast — only 25 minutes! Food was still piping hot. The Kacchi Biryani was aromatic and the mutton was perfectly tender. Will order again!"</p>
+                    <div class="rc-author">
+                        <div class="rc-avatar">AR</div>
+                        <div>
+                            <h5>Arif Rahman</h5>
+                            <span>Delivery Customer · Dhanmondi</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         CTA SECTION
+    ================================================================= -->
+    <section class="section-cta" id="order">
+        <div class="cta-bg-overlay"></div>
+        <div class="container cta-inner">
+            <h2 class="cta-title">Ready for Real Kebab?</h2>
+            <p class="cta-desc">Order now and enjoy the taste everyone in Dhaka loves.</p>
+            <a href="#" class="btn btn-fire btn-xl cta-glow-btn">
+                <i class="ph-fill ph-fire"></i> Order Your Kebab Now
+            </a>
+            <p class="cta-micro">Available on FoodPanda · Pathao Food · Direct Call</p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FOOTER
+    ================================================================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="ph-fill ph-fire"></i></div>
+                    <div class="logo-text">Flame<span>&</span>Skewer</div>
+                </a>
+                <p>Serving the boldest, smokiest, and most flavorful kebabs in the heart of Dhaka since 2005.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-youtube-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <a href="index.html">Home</a>
+                <a href="signature.html">Our Kebabs</a>
+                <a href="menu.html">Full Menu</a>
+                <a href="reviews.html">Reviews</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="ph-fill ph-map-pin"></i> 45 Baily Road, Dhaka 1000</p>
+                <p><i class="ph-fill ph-phone"></i> +88 01711-000000</p>
+                <p><i class="ph-fill ph-envelope-simple"></i> order@flameandskewer.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p><strong>Mon - Fri</strong></p>
+                <p>12:00 PM - 12:00 AM</p>
+                <p><strong>Sat - Sun</strong></p>
+                <p>11:00 AM - 1:00 AM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Flame & Skewer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
